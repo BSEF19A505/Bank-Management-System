@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <center>
+        <title>addNewAccount</title>
+        <script language="JavaScript" type="text/javaScript">
+            function validate(){ var flag=false; if(document.addNewAccount.name.value==""||document.addNewAccount.name.value==null){ document.getElementById("error_name").innerHTML="*Please enter name."; flag=true; } else{ document.getElementById("error_name").innerHTML="";
+            } if(document.addNewAccount.phone.value==""||document.addNewAccount.phone.value==null){ document.getElementById("error_phone").innerHTML="*Please enter phone no."; flag=true; } else{ document.getElementById("error_phone").innerHTML=""; } if(document.addNewAccount.cnic.value==""||document.addNewAccount.cnic.value==null){
+            document.getElementById("error_cnic").innerHTML="*Please enter cnic."; flag=true; } else{ document.getElementById("error_cnic").innerHTML=""; } if ( document.addNewAccount.email.value ==""||document.addNewAccount.email.value==null ) { document.getElementById("error_email").innerHTML="*Please
+            enter email address."; flag=true; } else if(document.addNewAccount.email.value != "") { var g=document.addNewAccount.email.value; var at=g.indexOf("@"); dot=g.lastIndexOf("."); if(at
+            <=0 || dot<=0 || dot<=at+1 || dot==g.length-1) { document.getElementById( "error_email").innerHTML="*invalid email address" ; flag=true; } else{ document.getElementById( "error_email").innerHTML="" ; } } if( flag==true){ return false; } else{ return true;
+                } } function validateNumber(event) { var keychar; keychar=e vent.key; if ((( "0123456789").indexOf(keychar)> -1)) return true; else return false; }
+        </script>
+</head>
+
+<body>
+    <h1>Add New Account</h1>
+    <br>
+    <br>
+    <form name="addNewAccount" align="center" method="POST" action="addNewAccount" onsubmit="return validate()">
+
+        <label>Enter name: </label>
+        <input type="text" name="name"></input>
+        <span id="error_name"></span>
+        <br>
+        <br>
+        <label>Phone: </label>
+        <input type="text" name="phone" onKeyPress="return validateNumber(event)"></input>
+        <span id="error_phone"></span>
+        <br>
+        <br>
+        <label>Email: </label>
+        <input type="text" name="email"></input>
+        <span id="error_email"></span>
+        <br>
+        <br>
+        <label>CNIC: </label>
+        <input type="text" name="cnic" onKeyPress="return validateNumber(event)"></input>
+        <span id="error_cnic"></span>
+        <br>
+        <br>
+        <input type="submit" name="addNewAccount" value="Add New Account"></input>
+    </form>
+
+</body>
+
+</html>

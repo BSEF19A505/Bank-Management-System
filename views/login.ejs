@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Login</title>
+    <script>
+        function validate() {
+            flag = 0
+            x = document.login.email.value;
+            a = new Array();
+            a = x.split('@');
+
+            if (x == "") {
+                document.getElementById("err1").innerHTML = "email field is empty"
+
+                flag = 1;
+            } else if (a[0] == "" || a[1].indexOf('@') >= 0 || !(a[1].indexOf('.') > 0) || a[1] == "") {
+                document.getElementById("err1").innerHTML = "email is not valid"
+                flag = 1;
+            } else {
+                document.getElementById("err1").innerHTML = ""
+            }
+            y = document.login.password.value;
+            if (document.login.password.value == "") {
+                document.getElementById("err2").innerHTML = "Password field is empty"
+                flag = 1;
+            } else if (y.length < 8) {
+                document.getElementById("err2").innerHTML = "Password too short"
+                flag = 1;
+            } else {
+                document.getElementById("err2").innerHTML = ""
+            }
+            if (flag == 1) {
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1 align="center">Login</h1>
+    <div>
+        <form name="login" align="center" action="login" method="post" onsubmit="return validate()">
+            <label>Email:</label>
+            <input type="text" name="email" placeholder="enter email"></input>
+            <span id="err1"></span>
+            <br>
+            <br>
+            <label>Password:</label><input type="password" name="password" placeholder="enter password"></input>
+            <span id="err2"></span></br>
+            </br>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <center>
+        <title>addNewAccount</title>
+        <script language="JavaScript" type="text/javaScript">
+            function validate(){ var flag=false; if(document.addNewUser.fname.value==""||document.addNewUser.fname.value==null){ document.getElementById("error_fname").innerHTML="*Please enter first name."; flag=true; } else{ document.getElementById("error_fname").innerHTML="";
+            } if(document.addNewUser.lname.value==""||document.addNewUser.lname.value==null){ document.getElementById("error_lname").innerHTML="*Please enter last name."; flag=true; } else{ document.getElementById("error_lname").innerHTML=""; } if(document.addNewUser.role.value==""||document.addNewUser.role.value==null){
+            document.getElementById("error_role").innerHTML="*Please Select role."; flag=true; } else{ document.getElementById("error_role").innerHTML=""; } if ( document.addNewUser.email.value ==""||document.addNewUser.email.value==null ) { document.getElementById("error_email").innerHTML="*Please
+            enter email address."; flag=true; } else if(document.addNewUser.email.value != "") { var g=document.addNewUser.email.value; var at=g.indexOf("@"); dot=g.lastIndexOf("."); if(at
+            <=0 || dot<=0 || dot<=at+1 || dot==g.length-1) { document.getElementById( "error_email").innerHTML="*invalid email address" ; flag=true; } else{ document.getElementById( "error_email").innerHTML="" ; } } y=d ocument.addNewUser.password.value; if(document.addNewUser.password.value==""
+                ){ document.getElementById( "err_password").innerHTML="Password field is empty" flag=1; }else if(y.length < 8){ document.getElementById( "err_password").innerHTML="Password too short" flag=1; }else{ document.getElementById( "err_password").innerHTML=""
+                } if( flag==true){ return false; } else{ return true; } } </script>
+</head>
+
+<body>
+    <h1>Add New User</h1>
+    <br>
+    <br>
+    <form name="addNewUser" align="center" method="POST" action="addNewUser" onsubmit="return validate()">
+
+        <label>Enter First name: </label>
+        <input type="text" name="fname"></input>
+        <span id="error_fname"></span>
+        <br>
+        <br>
+        <label>Enter Last name: </label>
+        <input type="text" name="lname"></input>
+        <span id="error_lname"></span>
+        <br>
+        <br>
+        <label>Email: </label>
+        <input type="text" name="email"></input>
+        <span id="error_email"></span>
+        <br>
+        <br>
+        <label>Password:</label><input type="password" name="password" placeholder="enter password"></input>
+        <span id="err_password"></span>
+        <br>
+        <br>
+
+        </select>
+        <span id="error_role" style="color:red"></span>
+        <br>
+        <br>
+        <input type="submit" name="addNewUser" value="Add New User"></input>
+    </form>
+
+</body>
+
+</html>

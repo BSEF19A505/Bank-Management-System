@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <center>
+        <title>withdraw Money</title>
+        <script language="JavaScript" type="text/javaScript">
+            function validate(){ flag = false; if(document.withdrawMoney.amount.value==""||document.withdrawMoney.amount.value==null||document.withdrawMoney.amount.value==0){ document.getElementById("error_amount").innerHTML="*Please enter valid Amount."; flag=true;
+            } else{ document.getElementById("error_amount").innerHTML=""; } if(document.withdrawMoney.account.value==""||document.withdrawMoney.account.value==null||document.withdrawMoney.account.value.length
+            <8){ document.getElementById( "error_account").innerHTML="*Please enter account no of 8 digits" ; flag=true; } else{ document.getElementById( "error_account").innerHTML="" ; } if( flag==true){ return false; } else{ return true; } } function validateNumber(event)
+                { var keychar; keychar=e vent.key; if ((( "0123456789").indexOf(keychar)> -1)) return true; else return false; }
+        </script>
+</head>
+
+<body>
+    <h1>Withdraw Money</h1>
+    <br>
+    <br>
+    <form name="withdrawMoney" align="center" method="POST" action="withdrawMoney" onsubmit="return validate()">
+        <label>Enter accountno:</label>
+        <input type="text" name="account" onKeyPress="return validateNumber(event)"></input>
+        <span id="error_account"></span>
+        <br>
+        <br>
+        <label>Enter amount:</label>
+        <input type="text" name="amount" onKeyPress="return validateNumber(event)"></input>
+        <span id="error_amount"></span>
+        <br>
+        <br>
+
+        <input type="submit" name="withdraw" value="Withdraw"></input>
+
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <centre>
+        <title>Admin Home</title>
+</head>
+
+<body>
+    <center>
+        <h1 id=mainHeading>Admin Home</h1>
+        <div>
+            <form name="addNewUser" method="POST" action="/adminHome">
+                <input type="hidden" name="hidden" value="addNewUser">
+                <input type="submit" name="addUser" value="Add New User"></input>
+            </form>
+            <form name="addNewAccount" method="POST" action="/adminHome">
+                <input type="hidden" name="hidden" value="addNewAccount">
+                <input type="submit" name="addAccount" value="Add New Account"></input>
+            </form>
+            <form name="depositMoney" method="POST" action="/adminHome">
+                <input type="hidden" name="hidden" value="depositMoney">
+                <input type="submit" value="Deposit Money"></input>
+            </form>
+            <form name="withdrawMoney" method="POST" action="/adminHome">
+                <input type="hidden" name="hidden" value="withdrawMoney">
+                <input type="submit" value="Withdraw Money"></input>
+            </form>
+
+
+
+
+            <form name="transferMoney" method="POST" action="/adminHome">
+                <input type="hidden" name="hidden" value="transferMoney">
+                <input type="submit" value="Transfer Money"></input>
+            </form>
+
+            <form name="logout" method="POST" action="/adminHome">
+                <input type="hidden" name="hidden" value="logout">
+                <input type="submit" value="Logout"></input>
+            </form>
+
+</body>
+
+</html>

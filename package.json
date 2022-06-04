@@ -1,0 +1,28 @@
+{
+    "name": "express",
+    "version": "1.0.0",
+    "description": "passport app",
+    "main": "main.js",
+    "scripts": {
+        "dev": "nodemon server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/BSEF19A505/Nodejs-EXPRESS-.git"
+    },
+    "keywords": [
+        "Mahad"
+    ],
+    "author": "Mahad Bin Naeem",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/BSEF19A505/Nodejs-EXPRESS-/issues"
+    },
+    "homepage": "https://github.com/BSEF19A505/Nodejs-EXPRESS-#readme",
+    "dependencies": {
+        "ejs": "^3.1.8",
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^6.3.5",
+        "nodemon": "^2.0.16"
+    }
+}

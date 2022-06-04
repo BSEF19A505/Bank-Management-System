@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <center>
+        <title>withdraw Money</title>
+        <script language="JavaScript" type="text/javaScript">
+            function validate(){ flag = false; if(document.transferMoney.amount.value==""||document.transferMoney.amount.value==null||document.transferMoney.amount.value==0){ document.getElementById("error_amount").innerHTML="*Please enter valid Amount."; flag=true;
+            } else{ document.getElementById("error_amount").innerHTML=""; } if(document.transferMoney.senderAccount.value==""||document.transferMoney.senderAccount.value==null||document.transferMoney.senderAccount.value.length
+            <8){ document.getElementById( "error_senderAccount").innerHTML="*Please enter account no of 8 digits" ; flag=true; } else{ document.getElementById( "error_senderAccount").innerHTML="" ; } if(document.transferMoney.receiverAccount.value=="" ||document.transferMoney.receiverAccount.value==null||document.transferMoney.receiverAccount.value.length<8){
+                document.getElementById( "error_receiverAccount").innerHTML="*Please enter account no of 8 digits" ; flag=true; } else{ document.getElementById( "error_receiverAccount").innerHTML="" ; } if( flag==true){ return false; } else{ return true;
+                } } function validateNumber(event) { var keychar; keychar=e vent.key; if ((( "0123456789").indexOf(keychar)> -1)) return true; else return false; }
+        </script>
+</head>
+
+<body>
+    <h1>Transfer Money</h1>
+    <br>
+    <br>
+    <form name="transferMoney" align="center" method="POST" action="transferMoney" onsubmit="return validate()">
+        <label>Sender's accountno:</label>
+        <input type="text" name="senderAccount" onKeyPress="return validateNumber(event)"></input>
+        <span id="error_senderAccount"></span>
+        <br>
+        <br>
+        <label>Receiver's accountno:</label>
+        <input type="text" name="receiverAccount" onKeyPress="return validateNumber(event)"></input>
+        <span id="error_receiverAccount"></span>
+        <br>
+        <br>
+        <label>Enter amount:</label>
+        <input type="text" name="amount" onKeyPress="return validateNumber(event)"></input>
+        <span id="error_amount"></span>
+        <br>
+        <br>
+
+        <input type="submit" name="transfer" value="Transfer"></input>
+
+
+</body>
+
+</html>
